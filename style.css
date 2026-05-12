@@ -568,12 +568,21 @@
 
 		.contact-links {
 			margin-top: 1rem;
-			font-size: 0.95rem;
+			font-size: 0.9rem;
+			gap: 0.6rem 0.8rem;
 		}
 
 		.contact-links a {
 			color: var(--navy);
-			border-bottom: 1px solid rgba(184, 136, 42, 0.35);
+			padding: 0.5rem 0.8rem;
+			border: 1px solid rgba(184, 136, 42, 0.4);
+			border-radius: 0.35rem;
+			transition: all 0.2s ease;
+		}
+
+		.contact-links a:hover {
+			background: rgba(184, 136, 42, 0.08);
+			border-color: var(--gold);
 		}
 
 		.site-footer {
