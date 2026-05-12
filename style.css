@@ -500,51 +500,8 @@
 			color: var(--gold);
 		}
 
-		.contact-links,
-		.site-footer__emails {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.75rem 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.stats__grid {
-				grid-template-columns: repeat(4, minmax(0, 1fr));
-			}
-
-			.two-col__inner {
-				grid-template-columns: minmax(0, 45%) minmax(0, 50%);
-				align-items: start;
-			}
-
-			.offer-table th,
-			.pipeline-table th {
-				width: 33%;
-			}
-
-			.feature-grid {
-				grid-template-columns: repeat(3, minmax(0, 1fr));
-				gap: 2.5rem;
-			}
-
-			.why-grid {
-				grid-template-columns: minmax(0, 46%) minmax(0, 48%);
-				gap: 5rem;
-			}
-		}
-
-		@media (max-width: 767px) {
-			.hero__inner {
-				padding-right: 0;
-			}
-
-			.hero__meta-top {
-		}
-
 		.compare-card--legacy {
 			color: var(--muted);
-		}
-
 		}
 
 		.compare-card--bridgepoint {
@@ -562,10 +519,6 @@
 			padding-left: 1.15rem;
 			display: grid;
 			gap: 0.75rem;
-		}
-
-		.compare-list li::marker {
-			color: var(--gold);
 		}
 
 		.team-card {
@@ -606,10 +559,14 @@
 			gap: 0.45rem;
 		}
 
-		.contact-links {
+		.contact-links,
+		.site-footer__emails {
 			display: flex;
 			flex-wrap: wrap;
 			gap: 0.75rem 1rem;
+		}
+
+		.contact-links {
 			margin-top: 1rem;
 			font-size: 0.95rem;
 		}
@@ -635,9 +592,6 @@
 		}
 
 		.site-footer__emails {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.65rem 1.2rem;
 			justify-content: center;
 		}
 
@@ -677,34 +631,136 @@
 			border: 0;
 		}
 
-		@media (min-width: 720px) {
-			.stat-grid {
+		@media (max-width: 767px) {
+			section {
+				padding: 3.25rem 0;
+			}
+
+			.hero {
+				padding: 2.75rem 0 2.25rem;
+			}
+
+			.hero__inner {
+				padding-right: 0;
+			}
+
+			.hero__meta-top {
+				position: static;
+				text-align: left;
+				margin-bottom: 1rem;
+			}
+
+			.hero__brand {
+				font-size: clamp(3.1rem, 15vw, 4.2rem);
+			}
+
+			.hero__eyebrow {
+				margin-top: 1.35rem;
+				font-size: 0.66rem;
+			}
+
+			.stats {
+				padding-bottom: 10px;
+			}
+
+			.stats__grid,
+			.feature-grid,
+			.why-grid,
+			.team-grid,
+			.two-col__inner {
+				grid-template-columns: 1fr;
+				gap: 1.4rem;
+			}
+
+			.offer-table,
+			.pipeline-table {
+				table-layout: auto;
+			}
+
+			.offer-table th,
+			.offer-table td,
+			.pipeline-table th,
+			.pipeline-table td {
+				display: block;
+				width: 100%;
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			.offer-table th,
+			.pipeline-table th {
+				border-right: 0;
+				border-bottom: 1px solid var(--line);
+				padding-bottom: 0.45rem;
+			}
+
+			.offer-table td,
+			.pipeline-table td {
+				padding-top: 0.6rem;
+			}
+
+			.team-card {
+				padding: 1rem;
+			}
+
+			.contact-links,
+			.site-footer__emails {
+				justify-content: flex-start;
+			}
+
+			.site-footer__inner {
+				justify-items: start;
+				text-align: left;
+			}
+		}
+
+		@media (min-width: 768px) {
+			.stats__grid {
 				grid-template-columns: repeat(2, minmax(0, 1fr));
 			}
 
-			.grid-two {
-				grid-template-columns: repeat(2, minmax(0, 1fr));
+			.two-col__inner {
+				grid-template-columns: minmax(0, 45%) minmax(0, 50%);
+				align-items: start;
 			}
 
-			.card-grid {
-				grid-template-columns: repeat(3, minmax(0, 1fr));
+			.feature-grid {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 2rem;
 			}
 
-			.compare-grid {
-				grid-template-columns: repeat(2, minmax(0, 1fr));
+			.why-grid {
+				grid-template-columns: minmax(0, 46%) minmax(0, 48%);
+				gap: 3.5rem;
 			}
 
 			.team-grid {
-				grid-template-columns: repeat(3, minmax(0, 1fr));
+				grid-template-columns: repeat(2, minmax(0, 1fr));
 			}
 
 			.hero__inner {
 				gap: 1.6rem;
 			}
+
+			.site-footer__inner {
+				grid-template-columns: minmax(0, 1fr) auto;
+				justify-items: stretch;
+				text-align: left;
+			}
+
+			.site-footer__emails {
+				flex-wrap: nowrap;
+				white-space: nowrap;
+			}
+
+			.site-footer__note {
+				justify-self: end;
+				align-self: center;
+			}
 		}
 
 		@media (min-width: 980px) {
-			.stat-grid {
+			.stats__grid {
 				grid-template-columns: repeat(4, minmax(0, 1fr));
 			}
 
@@ -716,11 +772,25 @@
 				gap: 1.8rem;
 			}
 
+			.feature-grid,
+			.team-grid {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+
+			.why-grid {
+				grid-template-columns: minmax(0, 46%) minmax(0, 48%);
+				gap: 5rem;
+			}
+
 			.panel,
 			.compare-card,
 			.info-card,
 			.team-card {
 				padding: 1.5rem;
+			}
+
+			.site-footer__emails {
+				gap: 0.75rem 1.25rem;
 			}
 		}
 
@@ -730,8 +800,7 @@
 			}
 
 			.reveal,
-			.reveal.is-visible,
-			.nav a::after {
+			.reveal.is-visible {
 				transition: none;
 			}
 		}
