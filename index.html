@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="BridgePoint Commodities is an origin-direct commodity trading firm connecting West African supply with global markets through disciplined, bankable trade structures." />
+	<meta name="theme-color" content="#0B1C33" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="BridgePoint Commodities" />
+	<meta property="og:description" content="Origin-direct trade from West Africa to global markets, structured for clean execution and bankable supply chains." />
+	<meta property="og:image" content="https://bridgepointcommodities.com/og-image.jpg" />
+	<meta property="og:url" content="https://bridgepointcommodities.com" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="BridgePoint Commodities" />
+	<meta name="twitter:description" content="Origin-direct trade from West Africa to global markets, structured for clean execution and bankable supply chains." />
+	<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1C33'/%3E%3Cpath d='M18 42V22h12.5c4.8 0 7.5 2 7.5 5.5 0 2.4-1.3 4.1-3.5 4.8v.2c2.8.6 4.5 2.6 4.5 5.5 0 4-3 6-8.2 6H18zm7-12.2h4.7c2 0 3.1-.9 3.1-2.4 0-1.6-1.1-2.5-3.2-2.5H25v4.9zm0 8.4h5.3c2.2 0 3.4-.9 3.4-2.7 0-1.8-1.3-2.8-3.5-2.8H25v5.5z' fill='%23B8882A'/%3E%3C/svg%3E" />
+	<title>BridgePoint Commodities</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
+	<style>
+		:root {
+			--navy: #0B1C33;
+			--gold: #B8882A;
+			--gold-light: #CFA04A;
+			--cream: #F7F5F0;
+			--text: #1A1A2E;
+			--muted: #6B7180;
+			--panel: #FFFFFF;
+			--line: rgba(11, 28, 51, 0.12);
+			--shadow: 0 18px 50px rgba(11, 28, 51, 0.08);
+			--font-heading: "Cormorant Garamond", Georgia, serif;
+			--font-body: "Barlow", Arial, sans-serif;
+			--font-eyebrow: "Barlow Condensed", Arial, sans-serif;
+			--content-width: 1180px;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: 0;
+			font-family: var(--font-body);
+			color: var(--text);
+			background: var(--cream);
+			line-height: 1.6;
+			text-rendering: optimizeLegibility;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		.skip-link {
+			position: absolute;
+			left: 1rem;
+			top: -4rem;
+			background: var(--navy);
+			color: white;
+			padding: 0.75rem 1rem;
+			border-radius: 999px;
+			z-index: 1000;
+			transition: top 0.2s ease;
+		}
+
+		.skip-link:focus {
+			top: 1rem;
+		}
+
+		.site-header {
+			position: sticky;
+			top: 0;
+			z-index: 50;
+			background: rgba(247, 245, 240, 0.94);
+			backdrop-filter: blur(12px);
+			border-bottom: 1px solid rgba(11, 28, 51, 0.08);
+		}
+
+		.site-header__inner,
+		.container {
+			width: min(100% - 2rem, var(--content-width));
+			margin: 0 auto;
+		}
+
+		.site-header__inner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+			min-height: 4.75rem;
+		}
+
+		.brand {
+			display: flex;
+			flex-direction: column;
+			gap: 0.15rem;
+		}
+
+		.brand__name {
+			font-family: var(--font-heading);
+			font-size: 1.4rem;
+			font-weight: 600;
+			letter-spacing: 0.02em;
+			color: var(--navy);
+			line-height: 1;
+		}
+
+		.brand__tag {
+			font-family: var(--font-eyebrow);
+			text-transform: uppercase;
+			letter-spacing: 0.16em;
+			color: var(--muted);
+			font-size: 0.72rem;
+		}
+
+		.nav {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			gap: 0.9rem 1.2rem;
+			font-size: 0.9rem;
+			color: var(--muted);
+		}
+
+		.nav a {
+			position: relative;
+			padding-bottom: 0.15rem;
+		}
+
+		.nav a::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			background: var(--gold);
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 0.2s ease;
+		}
+
+		.nav a:hover::after,
+		.nav a:focus-visible::after {
+			transform: scaleX(1);
+		}
+
+		main {
+			overflow: clip;
+		}
+
+		section {
+			padding: 5rem 0;
+		}
+
+		.hero,
+		.stat-strip,
+		#who-we-are,
+		#offerings {
+			background: var(--cream);
+		}
+
+		.hero {
+			padding: 80px 0 60px;
+			position: relative;
+		}
+
+		.hero__inner {
+			position: relative;
+			width: min(100% - 2rem, var(--content-width));
+			margin: 0 auto;
+			padding-right: clamp(0px, 18vw, 220px);
+		}
+
+		.hero__meta-top {
+			position: absolute;
+			top: 0;
+			right: 0;
+			text-align: right;
+			font-family: var(--font-body);
+			font-size: 0.75rem;
+			line-height: 1.45;
+			color: var(--muted);
+		}
+
+		.hero__meta-top span {
+			display: block;
+		}
+
+		.hero__brand {
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			gap: 0.05em;
+			font-family: var(--font-heading);
+			font-size: clamp(4.8rem, 8vw, 5.6rem);
+			line-height: 0.88;
+			font-weight: 400;
+			color: var(--navy);
+			letter-spacing: -0.02em;
+		}
+
+		.hero__brand-line {
+			display: block;
+		}
+
+		.hero__brand .gold {
+			color: var(--gold);
+		}
+
+		.hero__eyebrow {
+			display: inline-flex;
+			flex-direction: column;
+			gap: 0.4rem;
+			margin-top: 1.8rem;
+			width: fit-content;
+			font-family: var(--font-eyebrow);
+			font-size: 0.72rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.18em;
+			color: var(--gold);
+		}
+
+		.hero__eyebrow::after,
+		.eyebrow::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 1px;
+			background: var(--gold);
+		}
+
+		.stats {
+			padding: 0 0 18px;
+		}
+
+		.stats__rule {
+			height: 1px;
+			background: var(--gold);
+			width: 100%;
+		}
+
+		.stats__grid {
+			width: min(100% - 2rem, var(--content-width));
+			margin: 22px auto;
+			display: grid;
+			gap: 1.2rem;
+		}
+
+		.stat {
+			text-align: center;
+		}
+
+		.stat__value {
+			display: block;
+			font-family: var(--font-heading);
+			font-size: clamp(2.5rem, 4vw, 3.25rem);
+			font-weight: 700;
+			line-height: 1;
+			color: var(--gold);
+		}
+
+		.stat__label {
+			display: block;
+			margin-top: 0.45rem;
+			font-family: var(--font-body);
+			font-size: 0.75rem;
+			color: var(--muted);
+		}
+
+		.two-col {
+			padding: 60px 0;
+		}
+
+		.two-col__inner {
+			width: min(100% - 2rem, var(--content-width));
+			margin: 0 auto;
+			display: grid;
+			gap: 60px;
+		}
+
+		.col-left,
+		.col-right {
+			min-width: 0;
+		}
+
+		.eyebrow {
+			display: inline-flex;
+			flex-direction: column;
+			gap: 0.35rem;
+			margin: 0;
+			width: fit-content;
+			font-family: var(--font-eyebrow);
+			text-transform: uppercase;
+			letter-spacing: 0.16em;
+			font-size: 0.72rem;
+			font-weight: 700;
+			color: var(--gold);
+		}
+
+		.section-subheading {
+			margin: 14px 0 0;
+			font-family: var(--font-heading);
+			font-size: clamp(1.7rem, 2.2vw, 2.2rem);
+			font-weight: 700;
+			line-height: 1.05;
+			color: var(--navy);
+		}
+
+		.body-copy {
+			margin: 14px 0 0;
+			font-size: 0.95rem;
+			line-height: 1.7;
+			color: var(--muted);
+		}
+
+		.spacer-24 {
+			height: 24px;
+		}
+
+		.offer-table-title {
+			margin: 12px 0 14px;
+			font-family: var(--font-heading);
+			font-size: 1.8rem;
+			font-weight: 700;
+			line-height: 1.05;
+			color: var(--navy);
+		}
+
+		.offer-table,
+		.pipeline-table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		.offer-table tr,
+		.pipeline-table tr {
+			border-bottom: 1px solid var(--line);
+		}
+
+		.offer-table tr:first-child,
+		.pipeline-table tr:first-child {
+			border-top: 1px solid var(--line);
+		}
+
+		.offer-table th,
+		.offer-table td,
+		.pipeline-table th,
+		.pipeline-table td {
+			padding: 12px 0;
+			vertical-align: top;
+			border: 0;
+			background: transparent;
+		}
+
+		.offer-table th,
+		.pipeline-table th {
+			width: 38%;
+			padding-right: 18px;
+			text-align: left;
+			font-family: var(--font-eyebrow);
+			font-size: 0.68rem;
+			font-weight: 700;
+			letter-spacing: 0.16em;
+			text-transform: uppercase;
+			color: var(--gold);
+		}
+
+		.offer-table td,
+		.pipeline-table td {
+			font-family: var(--font-body);
+			font-size: 0.85rem;
+			line-height: 1.55;
+			color: var(--text);
+		}
+
+		.pipeline-label {
+			margin-top: 26px;
+		}
+
+		.section-head,
+		.panel,
+		.copy-block,
+		.info-card,
+		.table-wrap,
+		.compare-card,
+		.team-card,
+		.pipeline {
+			background: transparent;
+			border: 0;
+			box-shadow: none;
+			border-radius: 0;
+			padding: 0;
+		}
+
+		.grid-two,
+		.card-grid,
+		.team-grid,
+		.compare-grid {
+			display: grid;
+			gap: 1rem;
+		}
+
+		.info-card h3,
+		.team-card h3,
+		.copy-block h3,
+		.compare-card h3 {
+			margin: 0 0 0.45rem;
+			font-family: var(--font-heading);
+			color: var(--navy);
+		}
+
+		.info-card p,
+		.team-card p,
+		.team-card li,
+		td,
+		th {
+			color: var(--muted);
+		}
+
+		.compare-card--legacy li {
+			text-decoration: line-through;
+			text-decoration-thickness: 1px;
+			text-decoration-color: rgba(107, 113, 128, 0.45);
+		}
+
+		.compare-card--bridgepoint h3,
+		.compare-card--bridgepoint li {
+			color: var(--navy);
+		}
+
+		.compare-list,
+		.team-card ul {
+			margin: 0;
+			padding-left: 1.1rem;
+			display: grid;
+			gap: 0.45rem;
+		}
+
+		.compare-list li::marker {
+			color: var(--gold);
+		}
+
+		.contact-links,
+		.site-footer__emails {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.75rem 1rem;
+		}
+
+		@media (min-width: 768px) {
+			.stats__grid {
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+			}
+
+			.two-col__inner {
+				grid-template-columns: minmax(0, 45%) minmax(0, 50%);
+				align-items: start;
+			}
+		}
+
+		@media (max-width: 767px) {
+			.hero__inner {
+				padding-right: 0;
+			}
+
+			.hero__meta-top {
+				position: static;
+				text-align: left;
+				margin-bottom: 1.2rem;
+			}
+
+			.hero__brand {
+				font-size: clamp(3.9rem, 16vw, 5rem);
+			}
+
+			.stats__grid {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			.offer-table th,
+			.pipeline-table th {
+				width: 42%;
+			}
+		}
+
+		.compare-grid {
+			display: grid;
+			gap: 1rem;
+		}
+
+		.compare-card {
+			padding: 1.4rem;
+			border-radius: 1.3rem;
+			border: 1px solid var(--line);
+			background: white;
+			box-shadow: var(--shadow);
+		}
+
+		.compare-card h3 {
+			margin: 0 0 1rem;
+			font-family: var(--font-heading);
+			font-size: 1.7rem;
+		}
+
+		.compare-card--legacy {
+			color: var(--muted);
+		}
+
+		.compare-card--legacy li {
+			text-decoration: line-through;
+			text-decoration-thickness: 1px;
+			text-decoration-color: rgba(107, 113, 128, 0.45);
+		}
+
+		.compare-card--bridgepoint {
+			border-color: rgba(184, 136, 42, 0.28);
+			background: linear-gradient(180deg, rgba(247, 245, 240, 1) 0%, rgba(255, 255, 255, 1) 100%);
+		}
+
+		.compare-card--bridgepoint h3,
+		.compare-card--bridgepoint li {
+			color: var(--navy);
+		}
+
+		.compare-list {
+			margin: 0;
+			padding-left: 1.15rem;
+			display: grid;
+			gap: 0.75rem;
+		}
+
+		.compare-list li::marker {
+			color: var(--gold);
+		}
+
+		.team-card {
+			padding: 1.1rem;
+			display: grid;
+			gap: 1rem;
+		}
+
+		.headshot {
+			width: 100%;
+			aspect-ratio: 4 / 5;
+			object-fit: cover;
+			border-radius: 1rem;
+			background: linear-gradient(135deg, rgba(11, 28, 51, 0.08), rgba(184, 136, 42, 0.12));
+			border: 1px solid rgba(11, 28, 51, 0.08);
+		}
+
+		.team-card__name {
+			margin: 0;
+			font-family: var(--font-heading);
+			font-size: 1.8rem;
+			color: var(--navy);
+		}
+
+		.team-card__title {
+			font-family: var(--font-eyebrow);
+			text-transform: uppercase;
+			letter-spacing: 0.15em;
+			color: var(--gold);
+			font-size: 0.9rem;
+			margin: 0.1rem 0 0.5rem;
+		}
+
+		.team-card ul {
+			margin: 0;
+			padding-left: 1.1rem;
+			display: grid;
+			gap: 0.45rem;
+		}
+
+		.contact-links {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.75rem 1rem;
+			margin-top: 1rem;
+			font-size: 0.95rem;
+		}
+
+		.contact-links a {
+			color: var(--navy);
+			border-bottom: 1px solid rgba(184, 136, 42, 0.35);
+		}
+
+		.site-footer {
+			background: var(--navy);
+			color: rgba(255, 255, 255, 0.9);
+			padding: 2rem 0;
+		}
+
+		.site-footer__inner {
+			width: min(100% - 2rem, var(--content-width));
+			margin: 0 auto;
+			display: grid;
+			gap: 1rem;
+			justify-items: center;
+			text-align: center;
+		}
+
+		.site-footer__emails {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.65rem 1.2rem;
+			justify-content: center;
+		}
+
+		.site-footer__emails a {
+			color: rgba(255, 255, 255, 0.92);
+			border-bottom: 1px solid rgba(207, 160, 74, 0.45);
+		}
+
+		.site-footer__note {
+			font-family: var(--font-eyebrow);
+			text-transform: uppercase;
+			letter-spacing: 0.16em;
+			font-size: 0.76rem;
+			color: rgba(255, 255, 255, 0.55);
+		}
+
+		.reveal {
+			opacity: 0;
+			transform: translateY(16px);
+			transition: opacity 0.7s ease, transform 0.7s ease;
+		}
+
+		.reveal.is-visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.sr-only {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			white-space: nowrap;
+			border: 0;
+		}
+
+		@media (min-width: 720px) {
+			.stat-grid {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+
+			.grid-two {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+
+			.card-grid {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+
+			.compare-grid {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+
+			.team-grid {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+
+			.hero__inner {
+				gap: 1.6rem;
+			}
+		}
+
+		@media (min-width: 980px) {
+			.stat-grid {
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+			}
+
+			.hero {
+				padding: 7rem 0 5.25rem;
+			}
+
+			.hero__inner {
+				gap: 1.8rem;
+			}
+
+			.panel,
+			.compare-card,
+			.info-card,
+			.team-card {
+				padding: 1.5rem;
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			html {
+				scroll-behavior: auto;
+			}
+
+			.reveal,
+			.reveal.is-visible,
+			.nav a::after {
+				transition: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
+
+	<!-- Top navigation and brand bar -->
+	<header class="site-header">
+		<div class="site-header__inner">
+			<div class="brand" aria-label="BridgePoint Commodities home">
+				<span class="brand__name">BridgePoint Commodities</span>
+				<span class="brand__tag">Origin-direct trade · West Africa to global markets</span>
+			</div>
+			<nav class="nav" aria-label="Primary">
+				<a href="#who-we-are">Who We Are</a>
+				<a href="#offerings">What We Offer</a>
+				<a href="#current-offering">Current Offering</a>
+				<a href="#why-bridgepoint">Why BridgePoint</a>
+				<a href="#founding-team">Founding Team</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="main">
+		<section class="hero reveal" aria-labelledby="hero-title">
+			<div class="hero__inner">
+				<div class="hero__meta-top" aria-label="Company details">
+					<span>Incorporated · Delaware, USA</span>
+					<span>Operations · Abidjan, Côte d'Ivoire</span>
+					<span>CONFIDENTIAL · 2025</span>
+				</div>
+				<h1 id="hero-title" class="hero__brand" aria-label="BridgePoint Commodities">
+					<span class="hero__brand-line">Bridge<span class="gold">Point</span>Point</span>
+					<span class="hero__brand-line">Commodities</span>
+				</h1>
+				<p class="hero__eyebrow">ORIGIN-DIRECT TRADE · WEST AFRICA TO GLOBAL MARKETS</p>
+			</div>
+		</section>
+
+		<section class="stats reveal" aria-labelledby="stats-title">
+			<div class="stats__rule" aria-hidden="true"></div>
+			<h2 id="stats-title" class="sr-only">Key market statistics</h2>
+			<div class="stats__grid">
+				<div class="stat">
+					<span class="stat__value">1.9M t</span>
+					<span class="stat__label">Annual Ivorian rubber output</span>
+				</div>
+				<div class="stat">
+					<span class="stat__value">$4B+</span>
+					<span class="stat__label">US natural rubber imports / yr</span>
+				</div>
+				<div class="stat">
+					<span class="stat__value">70%</span>
+					<span class="stat__label">Africa's rubber from Côte d'Ivoire</span>
+				</div>
+				<div class="stat">
+					<span class="stat__value">10–15%</span>
+					<span class="stat__label">Margin lost to intermediaries</span>
+				</div>
+			</div>
+			<div class="stats__rule" aria-hidden="true"></div>
+		</section>
+
+		<section id="who-we-are" class="two-col reveal" aria-label="Who We Are and What We Offer">
+			<div class="two-col__inner">
+				<div class="col-left">
+					<p class="eyebrow">WHO WE ARE</p>
+					<h2 class="section-subheading">Origin-direct commodity trade from West Africa</h2>
+					<p class="body-copy">BridgePoint Commodities is built to connect origin supply with global buyers through direct producer relationships, disciplined execution, and bankable trade structures. We focus on traceability, consistent quality, and clean commercial terms that reduce friction at the point of execution.</p>
+					<div class="spacer-24"></div>
+					<p class="eyebrow">OUR EDGE</p>
+					<p class="body-copy">Our edge is direct access. By working with licensed producers and processors at origin, we create clearer lot visibility, stronger quality control, and a more efficient path from source to delivery. That makes the transaction easier to finance, easier to document, and easier to scale.</p>
+				</div>
+				<div class="col-right">
+					<p class="eyebrow">WHAT WE OFFER</p>
+					<h3 class="offer-table-title">CURRENT OFFERING</h3>
+					<table class="offer-table" aria-label="Current offering">
+						<tbody>
+							<tr>
+								<th>PRODUCT</th>
+								<td>Natural Rubber — TSR10, TSR20</td>
+							</tr>
+							<tr>
+								<th>ORIGIN</th>
+								<td>Côte d'Ivoire, Liberia</td>
+							</tr>
+							<tr>
+								<th>SUPPLY MODEL</th>
+								<td>Direct from licensed producer / processor</td>
+							</tr>
+							<tr>
+								<th>QUALITY CONTROL</th>
+								<td>SGS / Bureau Veritas inspection</td>
+							</tr>
+							<tr>
+								<th>DELIVERY TERMS</th>
+								<td>FOB / CIF (flexible)</td>
+							</tr>
+							<tr>
+								<th>PAYMENT TERMS</th>
+								<td>LC / SBLC / structured trade finance</td>
+							</tr>
+							<tr>
+								<th>VOLUMES</th>
+								<td>Available on request — scalable supply</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p class="eyebrow pipeline-label">PIPELINE</p>
+					<table class="pipeline-table" aria-label="Pipeline offerings">
+						<tbody>
+							<tr>
+								<th>PRODUCTS</th>
+								<td>Semi-industrial gold, manganese</td>
+							</tr>
+							<tr>
+								<th>ORIGIN</th>
+								<td>Côte d'Ivoire, Gabon, Congo Basin</td>
+							</tr>
+							<tr>
+								<th>STATUS</th>
+								<td>Relationships established — inquire for details</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+
+		<!-- Why BridgePoint comparison -->
+		<section id="why-bridgepoint" class="reveal">
+			<div class="container">
+				<div class="section-head">
+					<p class="eyebrow">Why BridgePoint</p>
+					<h2>A sharper way to source from West Africa.</h2>
+				</div>
+				<div class="compare-grid">
+					<article class="compare-card compare-card--legacy">
+						<h3>The Market Today</h3>
+						<ul class="compare-list">
+							<li>Multiple intermediaries between producer and buyer.</li>
+							<li>Unclear provenance and inconsistent lot quality.</li>
+							<li>Pricing leakage at every step of the chain.</li>
+							<li>Slow documentation and avoidable banking friction.</li>
+							<li>Higher execution risk for buyers and financiers.</li>
+						</ul>
+					</article>
+					<article class="compare-card compare-card--bridgepoint">
+						<h3>BridgePoint</h3>
+						<ul class="compare-list">
+							<li>Direct relationships at origin with licensed counterparties.</li>
+							<li>Defined quality control, traceability, and inspection.</li>
+							<li>Cleaner economics through reduced intermediation.</li>
+							<li>Transaction structures designed for banks and institutional buyers.</li>
+							<li>Repeatable sourcing platform built for expansion across commodities.</li>
+						</ul>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- Founding team -->
+		<section id="founding-team" class="reveal">
+			<div class="container">
+				<div class="section-head">
+					<p class="eyebrow">Founding Team</p>
+					<h2>Operator-led leadership with commercial and institutional experience.</h2>
+				</div>
+				<div class="team-grid">
+					<article class="panel team-card">
+						<img class="headshot" src="headshots/Folly.png" alt="Folly Follygah headshot" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 750%22%3E%3Crect width=%22600%22 height=%22750%22 rx=%2248%22 fill=%22%230B1C33%22/%3E%3Ccircle cx=%22300%22 cy=%22275%22 r=%2290%22 fill=%22%23CFA04A%22 fill-opacity=%22.18%22/%3E%3Ctext x=%22300%22 y=%22285%22 text-anchor=%22middle%22 font-family=%22Arial, sans-serif%22 font-size=%2234%22 fill=%22%23F7F5F0%22%3EFF%3C/text%3E%3Ctext x=%22300%22 y=%22355%22 text-anchor=%22middle%22 font-family=%22Arial, sans-serif%22 font-size=%2230%22 fill=%22%23CFA04A%22%3EFolly Follygah%3C/text%3E%3C/svg%3E';" />
+						<div>
+							<h3 class="team-card__name">Folly Follygah</h3>
+							<div class="team-card__title">Co-Founder &amp; CEO</div>
+							<ul>
+								<li>Leads commercial strategy, counterparties, and market development.</li>
+								<li>Focuses on origin relationships and disciplined execution.</li>
+								<li>Email: <a href="mailto:folly@bridgepointcommodities.com">folly@bridgepointcommodities.com</a></li>
+							</ul>
+							<div class="contact-links">
+								<a href="mailto:folly@bridgepointcommodities.com">Email</a>
+								<a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+							</div>
+						</div>
+					</article>
+
+					<article class="panel team-card">
+						<img class="headshot" src="headshots/david.png" alt="David Mbelepe headshot" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 750%22%3E%3Crect width=%22600%22 height=%22750%22 rx=%2248%22 fill=%22%230B1C33%22/%3E%3Ccircle cx=%22300%22 cy=%22275%22 r=%2290%22 fill=%22%23CFA04A%22 fill-opacity=%22.18%22/%3E%3Ctext x=%22300%22 y=%22285%22 text-anchor=%22middle%22 font-family=%22Arial, sans-serif%22 font-size=%2234%22 fill=%22%23F7F5F0%22%3EDM%3C/text%3E%3Ctext x=%22300%22 y=%22355%22 text-anchor=%22middle%22 font-family=%22Arial, sans-serif%22 font-size=%2230%22 fill=%22%23CFA04A%22%3EDavid Mbelepe%3C/text%3E%3C/svg%3E';" />
+						<div>
+							<h3 class="team-card__name">David Mbelepe</h3>
+							<div class="team-card__title">Co-Founder &amp; Executive Chairman</div>
+							<ul>
+								<li>Supports governance, strategic oversight, and institutional relationships.</li>
+								<li>Brings senior-level judgment to transaction planning and execution.</li>
+								<li>Email: <a href="mailto:david@bridgepointcommodities.com">david@bridgepointcommodities.com</a></li>
+							</ul>
+							<div class="contact-links">
+								<a href="mailto:david@bridgepointcommodities.com">Email</a>
+								<a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+							</div>
+						</div>
+					</article>
+
+					<article class="panel team-card">
+						<img class="headshot" src="headshots/gil.png" alt="Gil Gonzales headshot" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 750%22%3E%3Crect width=%22600%22 height=%22750%22 rx=%2248%22 fill=%22%230B1C33%22/%3E%3Ccircle cx=%22300%22 cy=%22275%22 r=%2290%22 fill=%22%23CFA04A%22 fill-opacity=%22.18%22/%3E%3Ctext x=%22300%22 y=%22285%22 text-anchor=%22middle%22 font-family=%22Arial, sans-serif%22 font-size=%2234%22 fill=%22%23F7F5F0%22%3EGG%3C/text%3E%3Ctext x=%22300%22 y=%22355%22 text-anchor=%22middle%22 font-family=%22Arial, sans-serif%22 font-size=%2230%22 fill=%22%23CFA04A%22%3EGil Gonzales%3C/text%3E%3C/svg%3E';" />
+						<div>
+							<h3 class="team-card__name">Gil Gonzales</h3>
+							<div class="team-card__title">Co-Founder &amp; President</div>
+							<ul>
+								<li>Drives platform growth, partner development, and commercial delivery.</li>
+								<li>Coordinates operating priorities across product lines and markets.</li>
+								<li>Email: <a href="mailto:gil@bridgepointcommodities.com">gil@bridgepointcommodities.com</a></li>
+							</ul>
+							<div class="contact-links">
+								<a href="mailto:gil@bridgepointcommodities.com">Email</a>
+								<a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="site-footer__inner">
+			<div class="site-footer__emails" aria-label="Team email addresses">
+				<a href="mailto:folly@bridgepointcommodities.com">folly@bridgepointcommodities.com</a>
+				<a href="mailto:david@bridgepointcommodities.com">david@bridgepointcommodities.com</a>
+				<a href="mailto:gil@bridgepointcommodities.com">gil@bridgepointcommodities.com</a>
+			</div>
+			<div class="site-footer__note">CONFIDENTIAL · 2025</div>
+		</div>
+	</footer>
+
+	<!-- Subtle fade-in on scroll -->
+	<script>
+		const revealElements = document.querySelectorAll('.reveal');
+
+		if ('IntersectionObserver' in window) {
+			const observer = new IntersectionObserver((entries, observerInstance) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-visible');
+						observerInstance.unobserve(entry.target);
+					}
+				});
+			}, {
+				threshold: 0.16,
+				rootMargin: '0px 0px -8% 0px'
+			});
+
+			revealElements.forEach((element) => observer.observe(element));
+		} else {
+			revealElements.forEach((element) => element.classList.add('is-visible'));
+		}
+	</script>
+</body>
+</html>
