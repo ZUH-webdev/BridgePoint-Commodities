@@ -286,9 +286,23 @@
 			}
 
 			.btn-cta {
-				padding: 0.5rem 0.7rem;
-				font-size: 0.75rem;
+				padding: 0;
+				font-size: 0;
 				white-space: nowrap;
+				width: 2.25rem;
+				height: 2.25rem;
+				position: relative;
+				border-radius: 50%;
+			}
+
+			.btn-cta::before {
+				content: "✉";
+				font-size: 1.1rem;
+				line-height: 1;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
 			}
 
 			/* Show CTA inside mobile nav panel */
@@ -1130,6 +1144,19 @@
 			.site-footer__note {
 				justify-self: end;
 				align-self: center;
+			}
+
+			.btn-cta {
+				padding: 0.55rem 0.75rem;
+				font-size: 0.78rem;
+				width: auto;
+				height: auto;
+				border-radius: 999px;
+				white-space: nowrap;
+			}
+
+			.btn-cta::before {
+				display: none;
 			}
 		}
 
