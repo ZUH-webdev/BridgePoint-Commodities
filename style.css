@@ -81,6 +81,37 @@
 			position: relative;
 		}
 
+		/* Top bar */
+		/* Quote bar (moved to bottom) */
+		.quote-bar {
+			background: linear-gradient(180deg, rgba(11,28,51,0.02), rgba(197,154,58,0.02));
+			border-top: 1px solid rgba(11,28,51,0.04);
+			padding: 0.8rem 0;
+		}
+
+		.quote-bar__inner {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: min(100% - 2rem, var(--content-width));
+			margin: 0 auto;
+			gap: 1rem;
+		}
+
+		.quote-bar__origin {
+			margin: 0;
+			font-family: var(--font-body);
+			color: rgba(11,28,51,0.7);
+			font-size: 0.98rem;
+			font-weight: 600;
+		}
+
+		.quote-bar__contacts a {
+			color: var(--navy);
+			font-weight: 600;
+			margin-left: 1rem;
+		}
+
 		.site-header__brand {
 			flex-shrink: 0;
 		}
@@ -127,6 +158,33 @@
 		.site-nav {
 			display: flex;
 			align-items: center;
+		}
+
+		/* Header actions / CTA */
+		.header-actions {
+			flex-shrink: 0;
+		}
+
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.6rem;
+			padding: 0.7rem 1rem;
+			border-radius: 999px;
+			font-weight: 600;
+			font-size: 0.95rem;
+			text-decoration: none;
+			transition: transform 0.18s ease, box-shadow 0.18s ease;
+		}
+
+		.btn-cta {
+			background: var(--gold);
+			color: var(--navy);
+			box-shadow: 0 6px 20px rgba(197,154,58,0.18);
+		}
+
+		.btn-cta:hover {
+			transform: translateY(-2px);
 		}
 
 		.hamburger {
@@ -194,28 +252,55 @@
 
 		@media (max-width: 768px) {
 			.brand-link {
-				gap: 0.55rem;
+				gap: 0.5rem;
 			}
 
 			.brand-logo {
-				height: 44px;
+				height: 40px;
 			}
 
 			.brand-name {
 				display: inline-block;
-				font-size: 0.95rem;
+				font-size: 0.9rem;
 				white-space: nowrap;
 			}
 
 			.site-header__inner {
 				flex-direction: row;
-				gap: 1rem;
+				gap: 0.75rem;
 				align-items: center;
+				padding: 0.75rem 0;
 			}
 
 			.hamburger {
 				display: inline-flex;
+			}
+
+			.header-actions {
+				display: inline-flex;
 				margin-left: auto;
+			}
+
+			.btn-cta {
+				padding: 0.55rem 0.75rem;
+				font-size: 0.78rem;
+				white-space: nowrap;
+			}
+
+			/* Show CTA inside mobile nav panel */
+			.site-nav__item--cta {
+				display: none;
+			}
+
+			.site-nav__cta {
+				display: inline-block;
+				background: var(--gold);
+				color: var(--navy);
+				padding: 0.6rem 0.9rem;
+				border-radius: 0.6rem;
+				font-weight: 700;
+				text-align: center;
+				width: 100%;
 			}
 
 			.site-nav {
@@ -262,7 +347,50 @@
 			.brand-name {
 				font-size: 1.1rem;
 			}
+
+			.quote-bar__inner {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 1rem;
+			}
+
+			.quote-bar__origin {
+				font-size: 0.83rem;
+				line-height: 1.5;
+				margin: 0;
+				max-width: 100%;
+			}
+
+			.quote-bar__contacts {
+				display: flex;
+				flex-direction: column;
+				gap: 0.4rem;
+				width: 100%;
+			}
+
+			.quote-bar__contacts a {
+				margin-left: 0;
+				font-size: 0.83rem;
+				line-height: 1.4;
+				word-break: break-word;
+			}
+
+			.site-footer__note {
+				align-self: flex-start;
+				font-size: 0.72rem;
+				line-height: 1.3;
+			}
 		}
+
+		@media (min-width: 769px) {
+			/* center nav in header by allowing it to grow and keeping brand/actions pinned */
+			.site-nav {
+				margin: 0 auto;
+			}
+		}
+
+		/* Hide the nav CTA on larger screens (desktop) */
+		.site-nav__item--cta { display: none; }
 
 		.container {
 			width: min(100% - 2rem, var(--content-width));
@@ -342,7 +470,7 @@
 			margin-top: 1.8rem;
 			width: fit-content;
 			font-family: var(--font-eyebrow);
-			font-size: 0.72rem;
+			font-size: 0.95rem;
 			font-weight: 700;
 			text-transform: uppercase;
 			letter-spacing: 0.18em;
@@ -382,8 +510,8 @@
 		.stat__value {
 			display: block;
 			font-family: var(--font-heading);
-			font-size: clamp(2.5rem, 4vw, 3.25rem);
-			font-weight: 700;
+			font-size: clamp(3rem, 4vw, 3.25rem);
+			font-weight: 900;
 			line-height: 1;
 			color: var(--gold);
 		}
@@ -392,8 +520,8 @@
 			display: block;
 			margin-top: 0.45rem;
 			font-family: var(--font-body);
-			font-size: 0.75rem;
-			color: var(--muted);
+			font-size: 0.9rem;
+			color: var(--text);
 		}
 
 		.two-col {
@@ -566,7 +694,7 @@
 			gap: 0.35rem;
 			margin: 0 0 2.35rem;
 			font-family: var(--font-eyebrow);
-			font-size: 0.72rem;
+			font-size: 0.85rem;
 			font-weight: 700;
 			letter-spacing: 0.18em;
 			text-transform: uppercase;
@@ -591,7 +719,7 @@
 			position: relative;
 			padding: 0.74rem 0 0.72rem 1.4rem;
 			font-family: var(--font-body);
-			font-size: 0.98rem;
+			font-size: 1.05rem;
 			line-height: 1.62;
 			border-bottom: 1px solid rgba(11, 28, 51, 0.08);
 		}
@@ -605,7 +733,7 @@
 		}
 
 		.why-list--legacy li {
-			color: rgba(107, 113, 128, 0.24);
+			color: rgba(20, 21, 21, 0.968);
 		}
 
 		.why-list--legacy li::before {
@@ -613,7 +741,7 @@
 		}
 
 		.why-list--bridgepoint li {
-			color: #a9d7fb;
+			color: var(--navy);
 		}
 
 		.why-list--bridgepoint li:last-child,
@@ -874,7 +1002,7 @@
 
 			.hero__eyebrow {
 				margin-top: 1.35rem;
-				font-size: 0.66rem;
+				font-size: 0.85rem;
 			}
 
 			.stats {
@@ -958,6 +1086,30 @@
 
 			.hero__inner {
 				gap: 1.6rem;
+			}
+
+			.quote-bar__inner {
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				gap: 2rem;
+			}
+
+			.quote-bar__origin {
+				font-size: 0.98rem;
+				line-height: 1.6;
+			}
+
+			.quote-bar__contacts {
+				display: flex;
+				flex-direction: row;
+				gap: 1rem;
+				width: auto;
+			}
+
+			.quote-bar__contacts a {
+				font-size: 0.9rem;
+				margin-left: 1rem;
 			}
 
 			.site-footer__inner {
